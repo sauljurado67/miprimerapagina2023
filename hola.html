@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Barra de navegación web con menú desplegable en JavaScript</title>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="#">Inicio</a></li>
+      <li><a href="#">Acerca de</a></li>
+      <li><a href="#">Contacto</a></li>
+      <li><a href="#">Más</a>
+        <ul>
+          <li><a href="#">Opción 1</a></li>
+          <li><a href="#">Opción 2</a></li>
+          <li><a href="#">Opción 3</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+
+  <script>
+    var nav = document.querySelector("nav");
+
+    nav.addEventListener("click", function(e) {
+      if (e.target.tagName === "A") {
+        var href = e.target.getAttribute("href");
+
+        if (href === "#") {
+          e.preventDefault();
+        }
+      }
+    });
+  </script>
+</body>
+</html>
